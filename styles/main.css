@@ -1,0 +1,189 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* color-scheme: light dark; */
+  --white: #ffffff;
+  --black: #000000;
+  --gray300: #d1d5db;
+  --rose700: #BE123C;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: .8;
+}
+
+/* UTILITY CLASSES */
+
+.flex {
+  display: flex;
+}
+
+.f-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  padding-inline: 5rem;
+  /* padding-block: 1.5rem; */
+}
+
+.pad-1 {
+  padding: 1rem;
+}
+
+.pad-15 {
+  padding: 1.5rem;
+}
+
+.pad-2 {
+  padding: 2rem;
+}
+
+.pad-25 {
+  padding: 2.5rem;
+}
+
+.pad-3 {
+  padding: 3rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.pad-block-1 {
+  padding-block: 1rem;
+}
+
+.pad-block-1 {
+  padding-block: 1rem;
+}
+
+.pad-block-2 {
+  padding-block: 2rem;
+}
+
+.pad-inline-1 {
+  padding-inline: 1rem;
+}
+
+.pad-inline-2 {
+  padding-inline: 2rem;
+}
+
+.gap-05 {
+  gap: 0.5rem;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-15 {
+  gap: 1.5rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.gap-25 {
+  gap: 2.5rem;
+}
+
+.ml-h {
+  margin-left: 0.5rem;
+}
+
+.ml-1 {
+  margin-left: 1rem;
+}
+
+.ml-2 {
+  margin-left: 2rem;
+}
+.mr-1 {
+  margin-left: 1rem;
+}
+
+.mr-2 {
+  margin-left: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.fw-600 {
+  font-weight: 700;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.logo-text {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.sm-text {
+  font-size: 12px;
+}
+
+.md-text-white {
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.md-text-black {
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 400;
+}
+/* UTILITY CLASSES */
