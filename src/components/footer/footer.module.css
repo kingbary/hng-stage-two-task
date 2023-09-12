@@ -1,0 +1,16 @@
+.footer {
+  margin: 100px 0 73px 0;
+  gap: 36px;
+}
+
+a {
+  color: var(--black);
+}
+
+.socials_container {
+  gap: 48px;
+}
+
+.footer_link {
+  gap: 48px;
+}

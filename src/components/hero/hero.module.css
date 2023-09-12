@@ -1,5 +1,5 @@
 .header {
-  padding-block: 158px;
+  padding-block: 128px;
 
   background: linear-gradient(
       0deg,
@@ -15,7 +15,7 @@
 }
 
 .nav {
-  position: fixed;
+  position: absolute;
   top: 22px;
   width: 100%;
 }

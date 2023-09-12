@@ -7,7 +7,10 @@
   --white: #ffffff;
   --black: #000000;
   --gray300: #d1d5db;
-  --rose700: #BE123C;
+  --gray400: #9ca3af;
+  --gray500: #6B7280;
+  --gray900: #111827;
+  --rose700: #be123c;
   background-color: #ffffff;
 
   font-synthesis: none;
@@ -24,6 +27,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 button {
   outline: none;
   border: none;
@@ -31,7 +38,7 @@ button {
 }
 
 button:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 /* UTILITY CLASSES */
@@ -46,7 +53,7 @@ button:hover {
 }
 
 .container {
-  padding-inline: 5rem;
+  padding-inline: 90px;
   /* padding-block: 1.5rem; */
 }
 
@@ -141,7 +148,19 @@ button:hover {
   margin-bottom: 2rem;
 }
 
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
 .fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
   font-weight: 700;
 }
 
@@ -186,4 +205,33 @@ button:hover {
   font-size: 1rem;
   font-weight: 400;
 }
+
+.white {
+  color: var(--white);
+}
+
+.black {
+  color: var(--black);
+}
+
+.gray300 {
+  color: var(--gray300);
+}
+
+.gray400 {
+  color: var(--gray400);
+}
+
+.gray500 {
+  color: var(--gray500);
+}
+
+.gray900 {
+  color: var(--gray900);
+}
+
+.rose700 {
+  color: var(--ros700);
+}
+
 /* UTILITY CLASSES */
