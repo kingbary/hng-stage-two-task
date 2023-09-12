@@ -1,5 +1,8 @@
 .footer {
   margin: 100px 0 73px 0;
+}
+
+.footer_container {
   gap: 36px;
 }
 

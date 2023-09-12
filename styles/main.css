@@ -8,7 +8,7 @@
   --black: #000000;
   --gray300: #d1d5db;
   --gray400: #9ca3af;
-  --gray500: #6B7280;
+  --gray500: #6b7280;
   --gray900: #111827;
   --rose700: #be123c;
   background-color: #ffffff;
@@ -16,6 +16,7 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
@@ -23,12 +24,20 @@
 * {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
   box-sizing: border-box;
+}
+
+body {
+  /* position: relative; */
+  overflow-x: hidden;
 }
 
 a {
   text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
 }
 
 button {
@@ -52,9 +61,12 @@ button:hover {
   flex-direction: column;
 }
 
+.grid {
+  display: grid;
+}
+
 .container {
   padding-inline: 90px;
-  /* padding-block: 1.5rem; */
 }
 
 .pad-1 {
@@ -235,3 +247,15 @@ button:hover {
 }
 
 /* UTILITY CLASSES */
+
+@media screen and (width < 960px) {
+  .container {
+    padding-inline: 3rem;
+  }
+}
+
+@media screen and (width <= 540px) {
+  .container {
+    padding-inline: 2rem;
+  }
+}

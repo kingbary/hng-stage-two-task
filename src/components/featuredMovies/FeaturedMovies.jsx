@@ -8,18 +8,18 @@ function FeaturedMovies() {
     <section className={styles.section}>
       <div className="container">
         <div className={`flex space-between ${styles.title_container}`}>
-          <h3 className={styles.section_title}>Featured Movies</h3>
+          <h3 className={`pad-05 ${styles.section_title}`}>Featured Movies</h3>
           <div className={`flex align-center ${styles.see_more}`}>
             <Link to="#">See More</Link>
             <img src={arrowRightIcon} width={"20px"} height={"20px"} />
           </div>
         </div>
-        <div className={`flex ${styles.movieCard_container}`}>
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
+        <div
+          className={`space-between ${styles.movieCard_container}`}
+        >
+          {new Array(9).fill(1).map((movie, idx) => (
+            <MovieCard key={idx} />
+          ))}
         </div>
       </div>
     </section>

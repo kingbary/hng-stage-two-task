@@ -91,5 +91,21 @@ input::placeholder {
 }
 
 .playIcon_btn:hover {
-  opacity: .8;
+  opacity: 0.8;
+}
+
+@media screen and (width < 900px) {
+  input {
+    width: 15rem;
+  }
+}
+
+@media screen and (width < 650px) {
+  .input_container {
+    width: 0;
+    visibility: hidden;
+  }
+  .hero_content {
+    margin: auto;
+  }
 }
