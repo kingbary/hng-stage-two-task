@@ -4,6 +4,7 @@ import {
   instagramIcon,
   youtubeIcon,
 } from "../../assets/icons";
+import Svg from "../Svg";
 import styles from "./footer.module.css";
 import { Link } from "react-router-dom";
 
@@ -15,16 +16,16 @@ function Footer() {
       >
         <div className={`flex ${styles.socials_container}`}>
           <Link to={"#"}>
-            <img src={facebookIcon} width={"24px"} height={"auto"} />
+            <Svg src={facebookIcon} width={'24px'} height="24px" />
           </Link>
           <Link to={"#"}>
-            <img src={instagramIcon} width={"24px"} height={"auto"} />
+            <Svg src={instagramIcon} width={'24px'} height="26px" />
           </Link>
           <Link to={"#"}>
-            <img src={twitterIcon} width={"24px"} height={"auto"} />
+            <Svg src={twitterIcon} width={'24px'} height="24px" />
           </Link>
           <Link to={"#"}>
-            <img src={youtubeIcon} width={"24px"} height={"auto"} />
+            <Svg src={youtubeIcon} width={'24px'} height="24px" />
           </Link>
         </div>
         <div className={`flex ${styles.footer_link}`}>

@@ -1,7 +1,6 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
 
   /* color-scheme: light dark; */
   --white: #ffffff;
@@ -19,6 +18,7 @@
   scroll-behavior: smooth;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 * {
@@ -28,7 +28,6 @@
 }
 
 body {
-  /* position: relative; */
   overflow-x: hidden;
 }
 
@@ -133,6 +132,14 @@ button:hover {
   gap: 2.5rem;
 }
 
+.gap-3 {
+  gap: 3rem;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
 .ml-h {
   margin-left: 0.5rem;
 }
@@ -218,6 +225,10 @@ button:hover {
   font-weight: 400;
 }
 
+.md-text-24 {
+  font-size: 24px;
+}
+
 .white {
   color: var(--white);
 }
@@ -243,10 +254,46 @@ button:hover {
 }
 
 .rose700 {
-  color: var(--ros700);
+  color: var(--rose700);
+}
+
+.no-wrap {
+  white-space: nowrap;
 }
 
 /* UTILITY CLASSES */
+
+.active-nav {
+  background-color: rgba(190, 18, 60, 0.1);
+  color: var(--rose700);
+  border-right: 5px solid var(--rose700);
+}
+
+.active-text {
+  color: var(--rose700);
+}
+
+.btn {
+  background-color: var(--rose700);
+  color: var(--white);
+  width: 169px;
+
+  gap: 0.3rem;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.btn[aria-disabled="true"] {
+  cursor: not-allowed;
+}
 
 @media screen and (width < 960px) {
   .container {

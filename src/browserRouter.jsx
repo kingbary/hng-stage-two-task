@@ -5,8 +5,8 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import Root from "./routes/_index";
-import Movies from "./routes/_movies";
 import ErrorPage from "./error-page";
+import Movies from "./routes/$movieId";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,7 +16,7 @@ export const router = createBrowserRouter(
       errorElement={<ErrorPage />}
     >
       <Route index={true} element={<Root />} />
-      <Route path="movie/:movieId" element={<Movies />} />
+      <Route path=":movieId" element={<Movies />} />
     </Route>
   )
 );

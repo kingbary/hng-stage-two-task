@@ -1,0 +1,152 @@
+.movie_section {
+  width: 100vw;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: var(--white);
+  padding-top: 52px;
+  padding-bottom: 69px;
+  width: 226px;
+  height: 100dvh;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0px 45px 45px 0px;
+}
+
+.icon_container {
+  padding-inline: 42px;
+  padding-block: 28px;
+}
+
+.playGame_con {
+  background: rgba(248, 231, 235, 0.4);
+  width: 170px;
+  height: 210px;
+  border: 1px solid rgba(190, 18, 60, 0.7);
+  border-radius: 20px;
+}
+
+.movieImgCard {
+  max-width: 100%;
+  padding-inline: 26rem;
+  padding-block: 7rem;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url(../../assets/img/movie-bg.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border-radius: 1.25rem;
+}
+
+.playIcon_btn {
+  background: rgba(248, 231, 235, 0.4);
+  width: 6rem;
+  height: 6rem;
+  border: 1px solid rgba(232, 232, 232, 0.2);
+  border-radius: 50%;
+}
+
+.genre_card {
+  color: var(--rose700);
+  width: 72px;
+  padding: 3px 8px;
+  border: 1px solid #f8e7eb;
+  border-radius: 12px;
+}
+
+.desc {
+  max-width: 65%;
+  aspect-ratio: auto;
+}
+
+.other_desc {
+  width: 300px;
+}
+
+.other_desc button {
+  width: 100%;
+}
+
+.lightRed_btn {
+  background-color: rgba(190, 18, 60, 0.1);
+  color: var(--black);
+
+  gap: 0.3rem;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  border-radius: 6px;
+  border: 1px solid var(--rose700);
+
+  cursor: pointer;
+}
+
+.rating_con_group {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  outline: 1px solid var(--gray500);
+}
+
+.top_rating {
+  text-align: center;
+  background-color: var(--rose700);
+  color: var(--white);
+  padding-inline: 0.5rem;
+  padding-block: 0.3rem;
+  border-radius: 8px;
+}
+
+.input_con {
+  padding-left: 1rem;
+  border: none;
+  outline: none;
+  flex-grow: 1;
+}
+
+.input_con::placeholder {
+  color: var(--black);
+  font-weight: 500;
+}
+
+.arrowDown {
+  margin-right: .5rem;
+}
+
+.upcoming_movies {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url(../../assets/img/upcoming-movie.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 14rem;
+  border-radius: 8px;
+}
+
+.upcoming_movies button {
+  position: absolute;
+  bottom: 0;
+  background: rgba(18, 18, 18, 0.5);
+  color: var(--white);
+  font-weight: 400;
+  border: none;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}

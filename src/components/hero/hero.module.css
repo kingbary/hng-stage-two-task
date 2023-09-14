@@ -5,8 +5,7 @@
       0deg,
       rgba(0, 0, 0, 0.5) 0%,
       rgba(0, 0, 0, 0.5) 100%
-    ),
-    url(../../assets/img/hero-bg.jpeg);
+    ), var(--background-img);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,34 +20,35 @@
 }
 
 .input_container {
-  position: relative;
+  display: flex;
+  outline: 1.5px solid var(--gray300);
+  border-radius: 0.3rem;
+  padding: 0.5rem;
 }
 
-input {
+.input_container:focus-within {
+  outline: 1.5px solid var(--rose700);
+}
+
+.search {
   background: none;
   color: var(--white);
   width: 28rem;
-  padding: 0.5rem;
 
   font-size: 0.8rem;
   font-weight: 400;
 
-  border: 1.5px solid var(--gray300);
-  border-radius: 0.3rem;
+  border: none;
   outline: none;
 }
 
-input::placeholder {
+.search::placeholder {
   color: var(--white);
   opacity: 0.8;
 }
 
 .btn {
-  background: none;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-
+  background: transparent;
   outline: none;
   border: none;
 }
@@ -70,40 +70,19 @@ input::placeholder {
   line-height: 1;
 }
 
-.playIcon_btn {
-  background-color: var(--rose700);
-  color: var(--white);
-  width: 169px;
-
-  gap: 0.3rem;
-  padding-inline: 1rem;
-  padding-block: 0.5rem;
-
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border-radius: 6px;
-
-  outline: none;
-  border: none;
-
-  cursor: pointer;
-}
-
 .playIcon_btn:hover {
   opacity: 0.8;
 }
 
 @media screen and (width < 900px) {
-  input {
+  .search {
     width: 15rem;
   }
 }
 
 @media screen and (width < 650px) {
   .input_container {
-    width: 0;
-    visibility: hidden;
+    display: none;
   }
   .hero_content {
     margin: auto;
