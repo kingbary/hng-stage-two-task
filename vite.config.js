@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/hng-stage-two-task/'
+  base: "https://kingbary.github.io/hng-stage-two-task"
 })
