@@ -1,6 +1,6 @@
 {
-  "name": "hng-stage-two-task",
   "homepage": "https://kingbary.github.io/hng-stage-two-task",
+  "name": "hng-stage-two-task",
   "private": true,
   "version": "0.0.0",
   "type": "module",
