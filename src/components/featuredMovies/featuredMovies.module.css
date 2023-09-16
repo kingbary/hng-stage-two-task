@@ -65,12 +65,18 @@
 }
 
 .heart_con {
-  background-color: rgba(243, 244, 246, 0.5);
+  background-color: var(--background-col);
+  background-color: var(--transparent);
   width: 30px;
   height: 30px;
   -webkit-backdrop-filter: blur(1px);
   backdrop-filter: blur(1px);
   border-radius: 50%;
+  z-index: 10;
+}
+
+.heartIcon {
+  color: var(--rose700);
 }
 
 .release_date {

@@ -16,7 +16,7 @@ export const router = createBrowserRouter(
       errorElement={<ErrorPage />}
     >
       <Route index={true} element={<Root />} />
-      <Route path=":movieId" element={<Movies />} />
+      <Route path="movie/:movieId" element={<Movies />} />
     </Route>
   )
 );

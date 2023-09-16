@@ -1,5 +1,4 @@
 import styles from "./movieProfile.module.css";
-import Svg from '../Svg'
 import {
   arrowDownIcon,
   listIcon,
@@ -8,48 +7,81 @@ import {
   twoTicketIcon,
 } from "../../assets/icons";
 
-function MovieInfo() {
+function MovieInfo({ movie, movieCredit }) {
+  const directors = movieCredit?.crew.reduce((cumm, member) => {
+    if (member.job === "Director") cumm.add(member.name);
+    return cumm;
+  }, new Set());
+  const writers = movieCredit?.crew.reduce((cumm, member) => {
+    if (/(writing)/i.test(member.department)) cumm.add(member.name);
+    return cumm;
+  }, new Set());
+  const cast = movieCredit?.cast.slice(0, 4).map((member) => {
+    return member.name;
+  });
+
   return (
     <div className="pad-inline-1">
-      <div className="flex gap-2 m-1 space-between">
+      <div className={`flex gap-2 wrap space-between ${styles.info_con}`}>
         <div className="flex gap-05">
           <p className="md-text fw-600">
-            Top Gun: Maverick • 2022 • PG-13 • 2h 10m
+            <span data-testid="movie-title">
+              {movie?.title ?? "Movie title"}
+            </span>{" "}
+            •{" "}
+            <span data-testid="movie-release-date">
+              {movie?.release_date.split("-")[0]}
+            </span>{" "}
+            • PG-13 • <span data-testid="movie-runtime">{movie?.runtime}m</span>
           </p>
-          <div className={`center-text sm-text fw-500 ${styles.genre_card}`}>
-            Action
-          </div>
-          <div className={`center-text sm-text fw-500 ${styles.genre_card}`}>
-            Drama
-          </div>
+          {movie?.genres.map((genre) => {
+            return (
+              <div
+                key={genre.id}
+                className={`center-text sm-text fw-500 ${styles.genre_card}`}
+              >
+                {genre.name}
+              </div>
+            );
+          })}
         </div>
         <div className="flex gap-05">
           <img src={starIcon} width={"24px"} height={"24px"} />
           <p className="fw-600 gray900">
-            8.5 <span className="fw-500 gray500">| 350k</span>
+            {movie?.vote_average}{" "}
+            <span className="fw-500 gray500">| {movie?.vote_count}</span>
           </p>
         </div>
       </div>
       <div className={`flex gap-1 space-between ${styles.desc_container}`}>
         <div className={`f-column gap-15 ${styles.desc}`}>
+          <p data-testid="movie-overview">{movie?.overview}</p>
           <p>
-            After thirty years, Maverick is still pushing the envelope as a top
-            naval aviator, but must confront ghosts of his past when he leads
-            TOP GUN's elite graduates on a mission that demands the ultimate
-            sacrifice from those chosen to fly it.
-          </p>
-          <p>
-            Director: <span className="rose700">Joseph Kosinski</span>
+            Director:{" "}
+            {Array.from(directors ?? []).map((director, idx, arr) => (
+              <span key={director} className="rose700">
+                {director}
+                {arr[idx + 1] ? ", " : ""}
+              </span>
+            ))}
           </p>
           <p>
             Writers:{" "}
-            <span className="rose700">Jim Cash, Jack Epps Jr, Peter Craig</span>
+            {Array.from(writers ?? []).map((writer, idx, arr) => (
+              <span key={writer} className="rose700">
+                {writer}
+                {arr[idx + 1] ? ", " : ""}
+              </span>
+            ))}
           </p>
           <p>
             Stars:{" "}
-            <span className="rose700">
-              Tom Cruise, Jennifer Connelly, Miles Teller
-            </span>
+            {cast?.map((member, idx, arr) => (
+              <span key={member} className="rose700">
+                {member}
+                {arr[idx + 1] ? ", " : ""}
+              </span>
+            ))}
           </p>
           <div className={styles.rating_con_group}>
             <div className={`${styles.top_rating}`}>Top rated movie #65</div>

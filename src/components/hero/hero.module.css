@@ -5,7 +5,8 @@
       0deg,
       rgba(0, 0, 0, 0.5) 0%,
       rgba(0, 0, 0, 0.5) 100%
-    ), var(--background-img);
+    ),
+    var(--background-img);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,10 +21,14 @@
 }
 
 .input_container {
+  flex-grow: 1;
+  flex-shrink: 1;
+  position: relative;
   display: flex;
-  outline: 1.5px solid var(--gray300);
-  border-radius: 0.3rem;
+  max-width: 28rem;
   padding: 0.5rem;
+  border-radius: 0.3rem;
+  outline: 1.5px solid var(--gray300);
 }
 
 .input_container:focus-within {
@@ -31,9 +36,9 @@
 }
 
 .search {
+  flex-grow: 1;
   background: none;
   color: var(--white);
-  width: 28rem;
 
   font-size: 0.8rem;
   font-weight: 400;
@@ -72,6 +77,32 @@
 
 .playIcon_btn:hover {
   opacity: 0.8;
+}
+
+.searchBox {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  color: var(--rose700);
+  padding: 0.5rem 2rem 0.2rem 1rem;
+  font-size: 0.9rem;
+  line-height: 2;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: 1px;
+
+  border-radius: 0 0 8px 8px;
+  /* border: 1px solid var(--rose700); */
+}
+::-webkit-scrollbar {
+  width: 8px;
 }
 
 @media screen and (width < 900px) {

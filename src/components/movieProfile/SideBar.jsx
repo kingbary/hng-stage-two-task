@@ -14,12 +14,12 @@ function SideBar() {
     <aside className={styles.sidebar}>
       <div className="flex align-center gap-1 pad-inline-1">
         <img width={"50px"} height={"50px"} src={tvIcon} alt="a tv icon" />
-        <p className="logo-text black">MovieBox</p>
+        <p className={`logo-text black ${styles.nav_text}`}>MovieBox</p>
       </div>
       <ul>
         <li className={styles.icon_container}>
           <Link to={"/"} className="flex align-center gap-05 fw-600 gray500">
-            <img src={homeIcon} alt="house icon" /> Home
+            <img src={homeIcon} alt="house icon" /> <p className={styles.nav_text}>Home</p>
           </Link>
         </li>
         <li className={`${styles.icon_container} active-nav`}>
@@ -28,19 +28,19 @@ function SideBar() {
             className="flex align-center gap-05 fw-600 gray500 active-text"
           >
             <img src={movieIcon} alt="camera icon" />
-            Movies
+            <p className={styles.nav_text}>Movies</p>
           </Link>
         </li>
         <li className={styles.icon_container}>
           <Link to={"#"} className="flex align-center gap-05 fw-600 gray500">
             <img src={tvShowIcon} alt="an icon" />
-            TV Series
+            <p className={styles.nav_text}>TV Series</p>
           </Link>
         </li>
         <li className={styles.icon_container}>
           <Link to={"#"} className="flex align-center gap-05 fw-600 gray500">
             <img src={calendarIcon} alt="an icon" />
-            Upcoming
+            <p className={styles.nav_text}>Upcoming</p>
           </Link>
         </li>
         {/* <div className={`f-column pad-1 ${styles.playGame_con}`}>
@@ -51,7 +51,7 @@ function SideBar() {
         <li className={styles.icon_container}>
           <Link to={"#"} className="flex align-center gap-05 fw-600 gray500">
             <img src={logoutIcon} alt="an icon" />
-            Logout
+            <p className={styles.nav_text}>Logout</p>
           </Link>
         </li>
       </ul>

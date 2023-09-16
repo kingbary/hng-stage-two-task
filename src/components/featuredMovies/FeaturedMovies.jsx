@@ -4,20 +4,21 @@ import { arrowRightIcon } from "../../assets/icons";
 import MovieCard from "./MovieCard";
 import Svg from "../Svg";
 
-function FeaturedMovies({ movies }) {
+function FeaturedMovies({ movies, genres }) {
   return (
     <section className={styles.section}>
       <div className="container">
         <div className={`flex space-between ${styles.title_container}`}>
           <h3 className={`pad-05 ${styles.section_title}`}>Featured Movies</h3>
-          <div className={`flex align-center ${styles.see_more}`}>
-            <Link to="#">See More</Link>
+
+          <Link className={`flex align-center ${styles.see_more}`} to="#">
+            See More
             <Svg src={arrowRightIcon} width={"20px"} height={"20px"} />
-          </div>
+          </Link>
         </div>
         <div className={`space-between ${styles.movieCard_container}`}>
-          {movies.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
+          {movies?.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} genres={genres} />
           ))}
         </div>
       </div>

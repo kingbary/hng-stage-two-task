@@ -8,6 +8,7 @@
   --gray300: #d1d5db;
   --gray400: #9ca3af;
   --gray500: #6b7280;
+  --transparent: rgba(243, 244, 246, 0.5);
   --gray900: #111827;
   --rose700: #be123c;
   background-color: #ffffff;
@@ -37,6 +38,10 @@ a {
 
 a:hover {
   opacity: 0.8;
+}
+
+li {
+  list-style: none;
 }
 
 button {
@@ -255,6 +260,10 @@ button:hover {
 
 .rose700 {
   color: var(--rose700);
+}
+
+.wrap {
+  flex-wrap: wrap;
 }
 
 .no-wrap {
