@@ -1,21 +1,24 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import { tvIcon, searchIcon, hamburgerIcon } from "../../assets/icons";
 import Svg from "../Svg";
 import styles from "./hero.module.css";
-import { Link } from "react-router-dom";
+import useRequest from "../../hooks/useRequest";
+import MovieListItem from "./MovieListItem";
 
 function Navigation({ movies }) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
   const [searchFocused, setSearchFocused] = useState(false);
 
+  const BASE_URL = "https://api.themoviedb.org/3/search/movie";
+  const API_KEY = "62fcf0068348285d5390c423175c13dd";
+
+  const { sendRequest, response, isLoading, errors } = useRequest({
+    url: `${BASE_URL}?api_key=${API_KEY}&query=${searchTerm}&include_adult=false&language=en-US`,
+    method: "get",
+  });
+
   useEffect(() => {
-    const results = searchTerm
-      ? Object.values(movies).filter((movie) =>
-          movie.title.toLowerCase().includes(searchTerm)
-        )
-      : [];
-    setSearchResults((prev) => results);
+    if (searchTerm) sendRequest();
   }, [searchTerm]);
 
   function blurInput(e) {
@@ -46,18 +49,18 @@ function Navigation({ movies }) {
         <button className={styles.btn} title="search">
           <Svg src={searchIcon} width="16px" height="16px" />
         </button>
-        {searchResults.length && searchFocused ? (
-          <div className={styles.searchBox}>
-            {searchResults.map((movie, idx) => (
-              <ul key={idx}>
-                <Link data-link="link" to={`movie/${movie?.id}`}>
-                  <li className="white">
-                    {movie.title} ({movie.release_date.split("-")[0]})
-                  </li>
-                </Link>
-              </ul>
-            ))}
-          </div>
+        {response?.results?.length && searchFocused ? (
+          <ul className={styles.searchBox}>
+            {isLoading ? (
+              <li data-testid="loading">Loading...</li>
+            ) : errors ? (
+              <li>Error fetching results</li>
+            ) : (
+              response?.results?.map((movie) => (
+                <MovieListItem key={movie.id} movie={movie} />
+              ))
+            )}
+          </ul>
         ) : null}
       </div>
 

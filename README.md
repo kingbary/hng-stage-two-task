@@ -1,5 +1,35 @@
 # Movie Channel Application
-This app showcases top-rated movies at a go, you can also search for your favourite movies and get detailed information about the movie 
 
-To get started, run npm dev.
-The app will be available @ http://127.0.0.1:5173/hng-stage-two-task/
+This app showcases top-rated movies at a go, you can also search for your favourite movies and get detailed information about the movie
+
+### RUNNING THIS PROJECT
+
+- Clone the repository
+
+```
+$ git clone  https://github.com/kingbary/hng-stage-two-task
+```
+
+- Change to the repo directory
+
+```
+$ cd ./hng-stage-two-task
+```
+
+
+- Install the dependencies
+
+```
+$ npm install
+```
+
+- Run the app..
+
+```
+$ npm run dev
+```
+
+### APP PREVIEW
+![thumbnail](./public/screenshot-1.png)
+![thumbnail](./public/screenshot-2.png)
+![thumbnail](./public/screenshot-3.png)

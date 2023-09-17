@@ -19,7 +19,7 @@ function MovieCard({ movie }) {
 
   const handleSaveFav = (e) => {
     e.preventDefault();
-    toast.success(`${movie?.title} saved successfuly`, {
+    toast.success(`${movie?.title} has been saved successfuly`, {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
