@@ -7,7 +7,7 @@ This app showcases top-rated movies at a go, you can also search for your favour
 - Clone the repository
 
 ```
-$ git clone  https://github.com/kingbary/hng-stage-two-task
+$ git clone https://github.com/kingbary/hng-stage-two-task
 ```
 
 - Change to the repo directory
@@ -23,7 +23,7 @@ $ cd ./hng-stage-two-task
 $ npm install
 ```
 
-- Run the app..
+- Run the app
 
 ```
 $ npm run dev
