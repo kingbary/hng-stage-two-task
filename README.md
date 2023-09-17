@@ -2,7 +2,7 @@
 
 This app showcases top-rated movies at a go, you can also search for your favourite movies and get detailed information about the movie
 
-### RUNNING THIS PROJECT
+### HOW TO RUN THE APP
 
 - Clone the repository
 
