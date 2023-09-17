@@ -24,16 +24,17 @@ function MovieInfo({ movie, movieCredit }) {
     <div className="pad-inline-1">
       <div className={`flex gap-2 wrap space-between ${styles.info_con}`}>
         <div className="flex gap-05">
-          <p className="md-text fw-600">
-            <span data-testid="movie-title">
+          <div className="flex md-text fw-600 gap-05">
+            <p data-testid="movie-title">
               {movie?.title ?? "Movie title"}
-            </span>{" "}
+            </p>{" "}
             •{" "}
-            <span data-testid="movie-release-date">
-              {movie?.release_date.split("-")[0]}
-            </span>{" "}
-            • PG-13 • <span data-testid="movie-runtime">{movie?.runtime}m</span>
-          </p>
+            <p data-testid="movie-release-date">
+              {/* {movie?.release_date.split("-")[0]} */}
+              {movie?.release_date}
+            </p>{" "}
+            • PG-13 • <p data-testid="movie-runtime">{movie?.runtime}</p><span>min</span>
+          </div>
           {movie?.genres.map((genre) => {
             return (
               <div

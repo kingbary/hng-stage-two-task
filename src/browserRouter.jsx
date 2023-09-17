@@ -15,7 +15,7 @@ export const router = createBrowserRouter(
       element={<Outlet />}
       errorElement={<ErrorPage />}
     >
-      <Route index={true} element={<Root />} />
+      <Route index element={<Root />} />
       <Route path="movie/:movieId" element={<Movies />} />
     </Route>
   )
