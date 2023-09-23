@@ -13,8 +13,7 @@ $ git clone https://github.com/kingbary/movie-channel
 - Change to the repo directory
 
 ```
-$ cd ./hng-stage-two-task
-```
+$ cd ./movie-channel
 
 
 - Install the dependencies
