@@ -17,7 +17,7 @@ export default function Movies() {
   } = useRequest({
     url: `${BASE_URL}/${movieId}?api_key=${API_KEY}`,
     method: "get",
-    // onSuccess: (res) => console.log(res),
+    // onSuccess: (res) => console.log(res)
   });
 
   const {
@@ -27,7 +27,6 @@ export default function Movies() {
   } = useRequest({
     url: `${BASE_URL}/${movieId}/credits?api_key=${API_KEY}`,
     method: "get",
-    // onSuccess: (res) => console.log(res),
   });
 
   useEffect(() => {
@@ -36,9 +35,15 @@ export default function Movies() {
   }, []);
 
   return (
-    <section className={`flex ${styles.movie_section}`}>
-      <SideBar />
-      <MovieProfile movie={getMovieDataResponse} movieCredit ={getMovieCreditResponse} />
-    </section>
+    <>
+      <section className={`flex ${styles.movie_section}`}>
+        {/* <SideBar /> */}
+        <MovieProfile
+          movie={getMovieDataResponse}
+          movieCredit={getMovieCreditResponse}
+        />
+      </section>
+      {/* <Footer /> */}
+    </>
   );
 }

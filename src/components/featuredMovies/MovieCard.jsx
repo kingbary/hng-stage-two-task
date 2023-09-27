@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { heartIcon, imdbIcon, cherryIcon } from "../../assets/icons";
 import Svg from "../Svg";
 import styles from "./featuredMovies.module.css";
@@ -6,14 +6,15 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function MovieCard({ movie }) {
-  // const posterRef = useRef(null);
-  // useEffect(() => {
-  //   posterRef.current?.style.setProperty(
-  //     "--background-img",
-  //     `url(https://image.tmdb.org/t/p/w500/${movie?.poster_path})`
-  //   );
-  // }, [movie]);
+function MovieCard({ movie, genres }) {
+  const posterRef = useRef(null);
+  useEffect(() => {
+    posterRef.current?.style.setProperty(
+      "--background-img",
+      `url(https://image.tmdb.org/t/p/w500/${movie?.poster_path})`
+    );
+    console.log(genres)
+  }, [movie]);
 
   const [saveFavorite, setSaveFavorite] = useState(false);
 
@@ -28,7 +29,7 @@ function MovieCard({ movie }) {
       draggable: true,
       progress: undefined,
       theme: "light",
-      });
+    });
     setSaveFavorite(!saveFavorite);
   };
 
@@ -38,12 +39,7 @@ function MovieCard({ movie }) {
         to={`movie/${movie?.id}`}
         className={`f-column ${styles.movie_card}`}
       >
-        <div className={styles.poster_container}>
-          <img
-            src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`}
-            data-testid="movie-poster"
-            alt="movie poster"
-          />
+        <div ref={posterRef} className={styles.poster_container}>
           <div
             className={`flex align-center space-between pad-1 ${styles.icon_container}`}
           >
@@ -81,12 +77,14 @@ function MovieCard({ movie }) {
         <p className="sm-text gray400 fw-600">
           USA,{" "}
           <span data-testid="movie-release-date">
-            {/* {movie.release_date.split("-")[0]} */}
-            {movie.release_date}
+            {movie.release_date.split("-")[0]}
           </span>{" "}
           - Current
         </p>
-        <p className={`fw-700 ${styles.movie_title}`} data-testid="movie-title">
+        <p
+          className={`fw-700 no-wrap ${styles.movie_title}`}
+          data-testid="movie-title"
+        >
           {movie?.title}
         </p>
         <div className="flex space-between">
@@ -104,10 +102,14 @@ function MovieCard({ movie }) {
             <p className="sm-text">{Math.ceil(movie?.popularity)}%</p>
           </div>
         </div>
-        <p className="sm-text gray400 fw-600">genre</p>
-        {/* {genres?.genres.map((genre) => {
-          return <p className="sm-text gray400 fw-600">{genre}</p>;
-        })} */}
+
+        {genres?.map((genre) => {
+          return (
+            <p key={genre?.id} className="sm-text gray400 fw-600">
+              {genre.name}
+            </p>
+          );
+        })}
       </Link>
     </div>
   );

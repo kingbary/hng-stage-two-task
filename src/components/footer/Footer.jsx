@@ -28,7 +28,7 @@ function Footer() {
             <Svg src={youtubeIcon} width={'24px'} height="24px" />
           </Link>
         </div>
-        <div className={`flex ${styles.footer_link}`}>
+        <div className={`flex no-wrap ${styles.footer_link}`}>
           <Link to={"#"}>Condition of Use</Link>
           <Link to={"#"}>Privacy & Policy</Link>
           <Link to={"#"}>Press Room</Link>

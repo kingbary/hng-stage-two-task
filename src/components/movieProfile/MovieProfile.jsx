@@ -14,7 +14,7 @@ function MovieProfile({ movie, movieCredit }) {
   }, [movie]);
 
   return (
-    <section className={`f-column gap-1 pad-3 ${styles.movieProfile}`}>
+    <section className={`f-column gap-1 ${styles.movieProfile}`}>
       <div ref={movieBgRef} className={`${styles.movieImgCard}`}>
         <div className="f-column align-center">
           <button

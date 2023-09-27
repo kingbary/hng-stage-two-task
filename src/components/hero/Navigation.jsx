@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { tvIcon, searchIcon, hamburgerIcon } from "../../assets/icons";
 import Svg from "../Svg";
 import styles from "./hero.module.css";
@@ -62,16 +62,6 @@ function Navigation({ movies }) {
             )}
           </ul>
         ) : null}
-      </div>
-
-      <div className=" flex align-center gap-1">
-        <span className="md-text-white">Sign in</span>
-        <button
-          title="menu"
-          className={`flex align-center justify-center ${styles.hamburger_bg}`}
-        >
-          <Svg src={hamburgerIcon} />
-        </button>
       </div>
     </nav>
   );

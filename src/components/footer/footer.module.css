@@ -8,6 +8,7 @@
 
 a {
   color: var(--black);
+  font-size: clamp(0.7rem, 3.5vw, 1rem);
 }
 
 .socials_container {
@@ -16,4 +17,10 @@ a {
 
 .footer_link {
   gap: 48px;
+}
+
+@media screen and (width < 600px) {
+  .footer_link {
+    gap: 1rem;
+  }
 }

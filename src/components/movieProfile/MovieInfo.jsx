@@ -21,36 +21,36 @@ function MovieInfo({ movie, movieCredit }) {
   });
 
   return (
-    <div className="pad-inline-1">
-      <div className={`flex gap-2 wrap space-between ${styles.info_con}`}>
-        <div className="flex gap-05">
-          <div className="flex md-text fw-600 gap-05">
-            <p data-testid="movie-title">
-              {movie?.title ?? "Movie title"}
-            </p>{" "}
-            •{" "}
-            <p data-testid="movie-release-date">
-              {/* {movie?.release_date.split("-")[0]} */}
-              {movie?.release_date}
-            </p>{" "}
-            • PG-13 • <p data-testid="movie-runtime">{movie?.runtime}</p><span>min</span>
-          </div>
-          {movie?.genres.map((genre) => {
-            return (
-              <div
-                key={genre.id}
-                className={`center-text sm-text fw-500 ${styles.genre_card}`}
-              >
-                {genre.name}
-              </div>
-            );
-          })}
+    <div className={styles.movie_info}>
+      <div className={`flex space-between wrap ${styles.info_con}`}>
+        <div className=" flex gap-05">
+          <p className={`fw-600 ${styles.info_title}`} data-testid="movie-title">
+            {movie?.title ?? "Movie title"} •
+            <span data-testid="movie-release-date">
+              {" "}
+              {movie?.release_date.split("-")[0]}
+            </span>{" "}
+            • PG-13 • <span data-testid="movie-runtime">{movie?.runtime}</span>
+            <span>m</span>
+          </p>
         </div>
-        <div className="flex gap-05">
+        <div className="flex gap-05 wrap">
+          <div className="flex">
+            {movie?.genres.map((genre) => {
+              return (
+                <div
+                  key={genre.id}
+                  className={`center-text sm-text fw-500 ${styles.genre_card}`}
+                >
+                  {genre.name}
+                </div>
+              );
+            })}
+          </div>
           <img src={starIcon} width={"24px"} height={"24px"} />
           <p className="fw-600 gray900">
-            {movie?.vote_average}{" "}
-            <span className="fw-500 gray500">| {movie?.vote_count}</span>
+            {movie?.vote_average}
+            <span className="fw-500 gray500"> | {movie?.vote_count}</span>
           </p>
         </div>
       </div>

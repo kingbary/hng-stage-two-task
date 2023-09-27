@@ -11,22 +11,40 @@ const API_KEY = "62fcf0068348285d5390c423175c13dd";
 
 export default function Root() {
   const { movieId } = useParams();
-  const { sendRequest, response, errors } = useRequest({
+  const {
+    sendRequest: getTopRated,
+    response: getTopRatedRes,
+    errors: getTopRatedErr,
+  } = useRequest({
     url: `${BASE_URL}/top_rated?api_key=${API_KEY}`,
     method: "get",
-    // onSuccess: (movies) => console.log(movies),
+    onSuccess: (res) => console.log(res),
+  });
+
+  const {
+    sendRequest: getMovieData,
+    response: getMovieDataResponse,
+    errors: getMoviesDataError,
+  } = useRequest({
+    url: `${BASE_URL}/${getTopRatedRes?.id}?api_key=${API_KEY}`,
+    method: "get",
+    // onSuccess: (res) => console.log(res),
   });
 
   useEffect(() => {
-    sendRequest();
+    getTopRated();
+    getMovieData();
   }, []);
 
   return (
     <>
-      <main>
-        <Navigation movies={response?.results} />
-        <HeroSection movie={response?.results[0]} />
-        <FeaturedMovies movies={response?.results.slice(1, 11)} />
+      <main className="f-column">
+        <Navigation movies={getTopRatedRes?.results} />
+        <HeroSection movie={getTopRatedRes?.results[0]} />
+        <FeaturedMovies
+          movies={getTopRatedRes?.results.slice(1, 11)}
+          genres={getMovieDataResponse?.genres}
+        />
       </main>
       <Footer />
     </>

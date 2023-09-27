@@ -1,3 +1,8 @@
+
+.movie_info {
+  padding-inline: 2rem;
+}
+
 .sidebar {
   position: sticky;
   top: 0;
@@ -25,7 +30,6 @@
 
 .movieImgCard {
   width: 100%;
-  /* padding-inline: clamp(20rem 1vw 15rem); */
   padding-block: 7rem;
   background: linear-gradient(
       0deg,
@@ -36,8 +40,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
-  border-radius: 1.25rem;
 }
 
 .playIcon_btn {
@@ -48,9 +50,15 @@
   border-radius: 50%;
 }
 
+.info_title {
+  font-size: clamp(1rem, 3.5vw, 1.5rem);
+}
+
 .genre_card {
   color: var(--rose700);
   width: fit-content;
+  height: fit-content;
+  font-size: 1rem;
   padding: 3px 8px;
   border: 1px solid #f8e7eb;
   border-radius: 12px;
@@ -59,6 +67,7 @@
 .desc_container {
   flex-grow: 1;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .desc {
@@ -66,7 +75,7 @@
 }
 
 .other_desc {
-  width: min(100%,300px);
+  width: min(100%, 300px);
 }
 
 .other_desc button {
@@ -120,7 +129,7 @@
 }
 
 .arrowDown {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .upcoming_movies {
@@ -152,33 +161,25 @@
 
 @media screen and (width < 1000px) {
   .info_con {
-    gap: .2rem;
+    gap: 0.2rem;
   }
   .desc {
     max-width: 100%;
   }
   .other_desc {
     width: 100%;
-    align-items: center;
+    /* align-items: center; */
   }
   .nav_text {
     display: none;
   }
-  .info_con {
-    flex-direction: column;
-  }
 }
 
 @media screen and (width < 500px) {
-  .movieProfile {
-    padding: 1rem;
-  }
-  .sidebar {
-    display: none;
+  .movie_info {
+    padding-inline: 1rem;
   }
   .desc {
     width: 100%;
-    align-items: center;
-    padding: 1rem;
   }
 }

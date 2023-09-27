@@ -99,7 +99,6 @@
   scrollbar-width: 1px;
 
   border-radius: 0 0 8px 8px;
-  /* border: 1px solid var(--rose700); */
 }
 ::-webkit-scrollbar {
   width: 8px;
